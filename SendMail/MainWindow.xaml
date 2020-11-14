@@ -1,0 +1,62 @@
+﻿<Window x:Class="SendMail.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SendMail"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="440" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Border Padding="10">
+        <StackPanel>
+                <TextBlock Padding="100,0,0,20" Text="Mail Gönderme Servisi"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Alıcı Email Adresi :"/>
+                <TextBox Grid.Row="2" Grid.Column="1" x:Name="emailAlici"/>
+            </Grid>
+            <TextBlock Padding="120,20,0,0" Text="Mail içerik"/>
+            <Grid Margin="0,15,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Mail başlık :"/>
+                <TextBox Grid.Column="1" x:Name="emailHeader"/>
+            </Grid>
+            <Grid Margin="0,15,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Mail Mesjı :"/>
+                <RichTextBox Grid.Column="1" Height="75" Name="emailBody"/>
+            </Grid>
+            <TextBlock Margin="120,15,0,15" Text="Gönderici Bilgileri:"/>
+            <Grid Margin="0,15,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Gönderen Mail Adresi :"/>
+                <TextBox Grid.Column="1" x:Name="emailSender"/>
+            </Grid>
+            <Grid Margin="0,15,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Gönderen Mail Adres Şifresi :"/>
+                <PasswordBox Grid.Column="1"  x:Name="emailPassword"/>
+            </Grid>
+            <Button Margin="0,25" Content="Gönder" x:Name="btnSend" Click="btnSend_Click"/>
+        </StackPanel>
+    </Border>
+</Window>
